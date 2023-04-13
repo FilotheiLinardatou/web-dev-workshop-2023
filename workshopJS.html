@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color:#efefef;
+        }
+        label, input, output, #knowledge, legend, select, textarea, #message{
+            margin: 0.5em;
+            padding: 0.2em;
+            font-size: 1em;
+            border-radius: 5px;
+        }
+        output {
+            border: 1px solid black;
+        }
+        label.range {
+            display: inline-block;
+            width: 5em;
+            text-align: right;
+        }
+        fieldset {
+            margin-top: 2em;
+        }
+        legend {
+            background-color: #000;
+            color: #ffffff;
+        }
+        input[type=submit] {
+            background-color: #00bb00;
+        }
+        textarea {
+            background-color: #fafafa;
+            /* resize: none; */
+        }
+        #charsLeft {
+            color: #ababab;
+            font-size: 0.8em;
+            border: none;
+        }
+        #message {
+            border: none;
+        }
+        #age {
+            background-color:#efefef;
+        }
+        #icon {
+            width: 30px;
+            height: 30px;
+            border-radius: 25%;
+            opacity: 70%;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        #circle-icon {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        opacity: 70%;
+        box-sizing: border-box; /* you may understand why I declared this property if you remove it and hover the icon*/
+        }
+
+        #icon:hover, #circle-icon:hover {
+        border: 2px solid black;
+        }
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 30px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 20%;
+            margin: 2px 1px;
+        }
+       
+        .button { 
+            background-color: rgb(4, 4, 145);
+            
+        }
+        nav {
+  height: 80px;
+  background-color: #222;
+  border-bottom: 1px solid #555
+}
+.list-item {
+  float: right;
+  margin-right: 25px;
+  margin-top: 10px;
+}
+.list-item li {
+  float: left;
+  padding: 10px 10px;
+  font-size: 18px;
+  border-radius: 2px;
+  transition: all .7s ease-in-out;
+}
+.list-item li a {
+  color: #EEE;
+}
+.list-item li:hover {
+  background-color: brown;
+}
+#container {
+  width: 500px;
+  height: 500px;
+  position: relative;
+  background: azure;
+}
+#animate {
+  width: 225px;
+  height: 225px;
+  position: absolute;
+  background-image:url("Logo.png");
+}
+    </style>
+</head>
+<body>
+    <h1>IEEE Student Branch NTUA</h1>
+    <nav>
+        <div class="logo">
+         
+        </div>
+        <div class="icon">
+          <span class="toggle">☰</span>
+        </div>
+        <ul class="list-item">
+          <li><a href="#">Computer Society</a></li>
+          <li><a href="#">Robotics and Automation Society</a></li>
+          <li><a href="#">Engineering in Medicine and Biology</a></li>
+          <li><a href="#">Power and Energy Society</a></li>
+          <li><a href="#">Communication Society</a></li>
+        </ul>
+      </nav>
+<h1>About</h1>
+<p>IEEE Student Branch in NTUA is a union of undergraduate and postgraduate students. Its purpose is to contribute 
+    to the expansion of knowledge related with the field of Electrical and Computer engineering and to the development 
+    of technical skills. Taking part in various and interesting projects,students acquire useful and pioneering
+    knowledge , obtain experience and  develop their creativity.</p>
+
+<h1>Events</h1>
+<div>
+<p>Workshop for training students about IEEE Extreme competition.
+</p>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+<img src="IEEE_Extreme_training.jpg">
+<br>    
+<button class="button" onclick="like()" type="button">
+    Likes  
+   <i class="fas fa-thumbs-up"></i>
+   <span id="likeCounter">0</span> 
+</button>
+</div>
+
+
+<h1> Complete the form to be assigned a Task </h1>
+<h3> Developer and friend of IEEE </h3>
+<!-- contact section -->
+<div id="contact-info">
+    <p> You can contact us about your questions...  &emsp; 
+        <a href = "mailto:ieee.ntua.sb@gmail.com"> <img src="https://thumbs.dreamstime.com/b/email-blue-circle-icon-open-envelope-pictogram-mail-symbol-email-messaging-email-marketing-campaign-website-design-178224635.jpg" id="circle-icon"></img> </a> 
+      &emsp; <a href="https://www.facebook.com/IeeeNtuaSB/"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Facebook_icon_2013.svg/2048px-Facebook_icon_2013.svg.png" id="icon"></img> </a> 
+     &emsp; <a href="https://www.instagram.com/ieee_ntua_sb/">  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" id="icon"></img> </a> 
+     &emsp; </p>
+       </div>
+<form id="myForm" method="get" onsubmit="return(validate());">
+    <output id="message"></output>
+    <!-- προσωπικά στοιχεία -->
+    <fieldset> 
+        <legend>Personal info</legend>
+        <label for="name">*First Name: </label>
+        <input id="name" type="text" autofocus size="30" required
+        name="name" placeholder="e.g. Christofer"><br>
+        <label for="surname">*Last Name: </label>
+        <input id="surname" type="text" name="surname" required
+        placeholder="e.g. Vardakis" size="30"><br>
+        <label for="email">*Email: </label>
+        <input id="email" type="email" name="email" required><br>
+        <input type="radio" id="junior" value="junior" name="devType" >
+        <label for="junior">Junior Developer  </label>
+        <input type="radio" id="senior" value="senior" name="devType">
+        <label for="senior">Senior Developer </label><br>
+        <label for="date">*Estimated deadline:</label>
+        <input type="date" id="date" name="date">
+    </fieldset>
+
+    <!-- κατοικία -->
+    <fieldset>
+        <legend>Available Tasks</legend>
+        
+        <label for="tasks">*Tasks:</label>
+        <input list="tasks" name="task" required>
+        <datalist id="tasks">
+        <select name="task" id="task">
+            <!-- εδώ θα μπούν οι επιλογές που δημιουργούνται από τη JavaScript -->
+        </select>
+        </datalist>
+    </fieldset>
+
+    <!-- Γνώσεις -->
+    <fieldset>
+        <legend>Knowledge</legend>
+        <div id="knowledge"> (0=none, 5=experienced)</div>
+        <label for="html" class="range" > HTML5 </label>
+        <input type="range" id="html" min="0" max="5" step="1" value="5" name="html">
+        <output id="showH">5</output><br>
+        <label for="css" class="range" > CSS3 </label>
+        <input type="range" id="css" min="0" max="5" step="1" value="5" name="css">
+        <output id="showC">5</output><br>
+        <label for="js" class="range" > JavaScript </label>
+        <input type="range" id="js" min="0" max="5" step="1" value="5" name="js">
+        <output id="showJ">5</output><br>
+    </fieldset>
+
+    <!-- Ενδιαφέροντα -->
+    <fieldset>
+        <legend>Some declarations...</legend>
+        <input type="checkbox" id="cooperation" name="cooperation" value="cooperation">
+        <label for="cooperation">I need to cooperate with other developers for this task </label><br>
+        <input type="checkbox" id="proTools" name="proTools" value="proTools">
+        <label for="proTools"> I need access to more Pro tools of the Company to do this task (such as Oracle) </label><br>
+    </fieldset>
+
+    <!-- Σύντομη δήλωση -->
+    <fieldset>
+        <legend>*Your questions ...</legend>
+        <textarea name="aboutMe"  id="mytext" required
+        placeholder="ask about the task, (max 500 characters)" 
+        cols="50" rows="10" maxlength="500"></textarea><br>
+        <output id="charsLeft"></output>
+    </fieldset>
+
+    <input type= "submit" onclick="myFunction()"value="Submission"><br>
+</form>
+
+<p><button class="button"onclick="myMove()">Click Me</button></p> 
+<div id ="container">
+    <div id ="animate"></div>
+  </div>
+
+</body>
+<script>
+ function myFunction(){
+    window.confirm("Thank you for your participation! Coordinator of this team will contact you soon. ")
+ }
+function validate(){
+    // we will find some constraints to put here...
+    return true;
+}
+
+//count chars left
+const chars = document.querySelector("#mytext");
+const charsleft = document.querySelector("#charsLeft");
+chars.addEventListener("input", (e)=>{
+    console.log(chars);
+    charsleft.value = `μένουν ακόμη ${chars.maxLength-chars.value.length} χαρακτήρες`;
+})
+
+// dropdown menu for tasks
+const taskSelect = document.querySelector("#task");
+const tasksList = `Navbar
+Home Page
+Contact Page
+Cybersecurity 
+DataBase Design`.split("\n").sort()
+console.log(tasksList);
+for (let task of tasksList){
+    let option = document.createElement("option");
+    option.value = task;
+    option.textContent = task;
+    if (task=="Navbar") option.setAttribute("selected", "selected");
+    taskSelect.appendChild(option);
+}
+
+// dropping line in the field "Knowledge"
+const h = document.querySelector("#html");
+const showH = document.querySelector("#showH");
+h.addEventListener("input", (ev)=>{
+    showH.value = h.value;
+})
+const c = document.querySelector("#css");
+const showC = document.querySelector("#showC");
+c.addEventListener("input", (ev)=>{
+    showC.value = c.value;
+})
+const j = document.querySelector("#js");
+const showJ = document.querySelector("#showJ");
+j.addEventListener("input", (ev)=>{
+    showJ.value = j.value;
+})
+showH.value = h.value;
+showC.value = c.value;
+showJ.value = j.value;
+function like() {
+            var counter = document.getElementById("likeCounter");
+            counter.innerHTML = parseInt(counter.innerHTML) + 1;
+        }
+ function myMove() {
+  let id = null;
+  const elem = document.getElementById("animate");
+  let pos = 0;
+  clearInterval(id);
+  id = setInterval(frame,5);
+  function frame() {
+    if (pos == 275) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + 'px';
+      elem.style.left = pos + 'px';
+    }
+  }
+}
+</script>
+</body>
+</html>

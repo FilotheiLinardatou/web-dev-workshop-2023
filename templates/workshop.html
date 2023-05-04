@@ -240,7 +240,7 @@
         <output id="charsLeft"></output>
     </fieldset>
 
-    <input type= "submit" onclick="myFunction()"value="Submission"><br>
+    <input type= "submit" value="Submission"><br>
 </form>
 
 <p><button class="button"onclick="myMove()">Click Me</button></p> 
@@ -250,11 +250,29 @@
 
 </body>
 <script>
- function myFunction(){
-    window.confirm("Thank you for your participation! Coordinator of this team will contact you soon. ")
- }
+ 
+ // likes counter
+ function like() {
+            var counter = document.getElementById("likeCounter");
+            counter.innerHTML = parseInt(counter.innerHTML) + 1;
+        }
+    
+ // validation for the form submission
 function validate(){
-    // we will find some constraints to put here...
+    // the estimated Deadline should be after the current Date Time
+    let currentDate = new Date(); // current date
+    //let estimatedDeadline = new Date();
+    let estimatedDeadline = new Date(document.querySelector("#date").value); 
+    
+    // alert(typeof(estimatedDeadline));    // object
+    
+    if (currentDate.getTime() > estimatedDeadline.getTime()){
+        alert("Please insert a valid estimated deadline (after the current Date)!");
+        return false;
+    }
+    window.confirm("Thank you for your participation! Coordinator of this team will contact you soon. ");
+    //  alert("estimated Deadline" + estimatedDeadline);
+    //  alert(currentDate);
     return true;
 }
 
@@ -301,10 +319,8 @@ j.addEventListener("input", (ev)=>{
 showH.value = h.value;
 showC.value = c.value;
 showJ.value = j.value;
-function like() {
-            var counter = document.getElementById("likeCounter");
-            counter.innerHTML = parseInt(counter.innerHTML) + 1;
-        }
+
+// Bonus Game
  function myMove() {
   let id = null;
   const elem = document.getElementById("animate");
@@ -321,6 +337,7 @@ function like() {
     }
   }
 }
+
 </script>
-</body>
+
 </html>

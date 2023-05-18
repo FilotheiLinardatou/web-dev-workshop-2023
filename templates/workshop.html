@@ -180,7 +180,7 @@
         <legend>Personal info</legend>
         <label for="name">*First Name: </label>
         <input id="name" type="text" autofocus size="30" required
-        name="name" placeholder="e.g. Christofer"><br>
+        name="name" placeholder="e.g. Christopher"><br>
         <label for="surname">*Last Name: </label>
         <input id="surname" type="text" name="surname" required
         placeholder="e.g. Vardakis" size="30"><br>
@@ -190,14 +190,14 @@
         <label for="junior">Junior Developer  </label>
         <input type="radio" id="senior" value="senior" name="devType">
         <label for="senior">Senior Developer </label><br>
-        <label for="date">*Estimated deadline:</label>
-        <input type="date" id="date" name="date">
+        
     </fieldset>
 
     <!-- Available Tasks -->
     <fieldset>
         <legend>Available Tasks</legend>
-        
+        <label for="date">*Estimated deadline:</label>
+        <input type="date" id="date" name="date"><br>
         <label for="tasks">*Tasks:</label>
         <input list="tasks" name="task" required>
         <datalist id="tasks">
@@ -234,7 +234,7 @@
     <!-- questions -->
     <fieldset>
         <legend>*Your questions ...</legend>
-        <textarea name="aboutMe"  id="mytext" required
+        <textarea name="aboutMe"  id="mytext" 
         placeholder="ask about the task, (max 500 characters)" 
         cols="50" rows="10" maxlength="500"></textarea><br>
         <output id="charsLeft"></output>

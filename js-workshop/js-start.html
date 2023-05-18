@@ -260,25 +260,43 @@
 
 // TODO 1:  likes counter   (number goes +1 when we press the button)
 function like() {
-            
+    var counter = document.getElementById("likeCounter");
+    // go to the web page, right click -> Check (or Inspector) -> Console
+    // there you can see what is printed to the console: 
+    console.log('counter = ');
+    console.log(counter);
+
+    // Your code here
 }
     
 // TODO 2:  validation for the form submission (true-> submission, false->no submission)   
 //          the estimated Deadline should be after the current Date Time
 function validate(){
-    
+    let currentDate = new Date(); // current date
+    // Your code here
     return true;
 }
 
 // TODO 3:  count chars left in "About Me" field (e.g. if you write a word of 5 characters 500-5 = 495 characters are left)
 //          Our first Event will be used here!! (input change...)
-
+const chars = document.querySelector("#mytext");
+const charsleft = document.querySelector("#charsLeft");
+// Your code here
 
 // TODO 4:  dropdown menu for tasks (Navbar, Database Design, Cybersecurity, Contact page, Home page)
-
+const taskSelect = document.querySelector("#task");
+// Your code here
 
 // TODO 5:  dropping line in the field "Knowledge" (HTML, CSS, JS) 
 //          (show the value of the range-input elements from 0 to 5)
+const h = document.querySelector("#html");
+const showH = document.querySelector("#showH");
+// in order to understand... print them to the console
+console.log('h = ');
+console.log(h);
+console.log('showH = ');
+console.log(showH);
+// Your code here
 
 
 // Bonus Game:  The IEEE logo moves in the diagonal!

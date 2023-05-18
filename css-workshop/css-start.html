@@ -83,7 +83,7 @@
        </div>
 <form id="myForm" method="post" onsubmit="return(validate());">
     <output id="message"></output>
-    <!-- προσωπικά στοιχεία -->
+    <!-- Personal info -->
     <fieldset> 
         <legend>Personal info</legend>
         <label for="name">*First Name: </label>
@@ -102,7 +102,7 @@
         <input type="date" id="date" name="date">
     </fieldset>
 
-    <!-- κατοικία -->
+    <!-- Available Tasks -->
     <fieldset>
         <legend>Available Tasks</legend>
         
@@ -110,12 +110,12 @@
         <input list="tasks" name="task" required>
         <datalist id="tasks">
         <select name="task" id="task">
-            <!-- εδώ θα μπούν οι επιλογές που δημιουργούνται από τη JavaScript -->
+            <!-- here will be positioned options that are made by JavaScript -->
         </select>
         </datalist>
     </fieldset>
 
-    <!-- Γνώσεις -->
+    <!-- Knowledge -->
     <fieldset>
         <legend>Knowledge</legend>
         <div id="knowledge"> (0=none, 5=experienced)</div>
@@ -130,7 +130,7 @@
         <output id="showJ">5</output><br>
     </fieldset>
 
-    <!-- Ενδιαφέροντα -->
+    <!-- Some declarations -->
     <fieldset>
         <legend>Some declarations...</legend>
         <input type="checkbox" id="cooperation" name="cooperation" value="cooperation">
@@ -139,7 +139,7 @@
         <label for="proTools"> I need access to more Pro tools of the Company to do this task (such as Oracle) </label><br>
     </fieldset>
 
-    <!-- Σύντομη δήλωση -->
+    <!-- questions -->
     <fieldset>
         <legend>*Your questions ...</legend>
         <textarea name="aboutMe"  id="mytext" required

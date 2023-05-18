@@ -262,7 +262,7 @@
 function like() {
     var counter = document.getElementById("likeCounter");
     // go to the web page, right click -> Check (or Inspector) -> Console
-    // there you can see what is printed to the console: 
+    // there you can see what is printed to the console (every time you click on likes button): 
     console.log('counter = ');
     console.log(counter);
 
@@ -273,6 +273,13 @@ function like() {
 //          the estimated Deadline should be after the current Date Time
 function validate(){
     let currentDate = new Date(); // current date
+    dateElement = document.querySelector("#date");
+    date = dateElement.value;
+    // use the below alerts to understand what dateElement and date are...
+    // Alert is made when you submit the form (so that validate() is called)
+    // alert(dateElement);
+    // alert(date);
+    
     // Your code here
     return true;
 }
@@ -281,10 +288,16 @@ function validate(){
 //          Our first Event will be used here!! (input change...)
 const chars = document.querySelector("#mytext");
 const charsleft = document.querySelector("#charsLeft");
+console.log('chars = ');
+console.log(chars);
+console.log('charsLeft = ');
+console.log(charsLeft);
 // Your code here
 
 // TODO 4:  dropdown menu for tasks (Navbar, Database Design, Cybersecurity, Contact page, Home page)
 const taskSelect = document.querySelector("#task");
+console.log('taskSelect = ');
+console.log(taskSelect);
 // Your code here
 
 // TODO 5:  dropping line in the field "Knowledge" (HTML, CSS, JS) 

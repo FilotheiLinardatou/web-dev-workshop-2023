@@ -193,7 +193,7 @@
         
     </fieldset>
 
-    <!-- κατοικία -->
+    <!-- Available Tasks -->
     <fieldset>
         <legend>Available Tasks</legend>
         <label for="date">*Estimated deadline:</label>
@@ -253,7 +253,7 @@
     /*
         Good morning/noon/evening  Filothei,
         I leave this empty and we can add some basic functions, events that we assume that 
-        help the attenders of the event to start writing code.
+        help the attenders of the event to start writing javascript.
         We should specify the TODOs with helping comments in order for the attenders to 
         focus on developing the app...
     */
@@ -275,12 +275,22 @@ function validate(){
     let currentDate = new Date(); // current date
     dateElement = document.querySelector("#date");
     date = dateElement.value;
+    let estimatedDeadline = new Date(date);
     // use the below alerts to understand what dateElement and date are...
     // Alert is made when you submit the form (so that validate() is called)
     // alert(dateElement);
     // alert(date);
+    // alert(estimatedDeadline);
     
     // Your code here
+    // use  also the below commands ... as a way to display messages to the web page window
+    // use getTime() method to compare times from Date objects
+
+    // window.alert("Please insert a valid estimated deadline (after the current Date)!");
+    
+    // window.confirm("Thank you for your participation! Coordinator of this team will contact you soon. ");
+    
+    
     return true;
 }
 
@@ -292,12 +302,22 @@ console.log('chars = ');
 console.log(chars);
 console.log('charsLeft = ');
 console.log(charsLeft);
-// Your code here
+chars.addEventListener("input", (e)=>{
+    // Your code here
+})
+
 
 // TODO 4:  dropdown menu for tasks (Navbar, Database Design, Cybersecurity, Contact page, Home page)
 const taskSelect = document.querySelector("#task");
 console.log('taskSelect = ');
 console.log(taskSelect);
+const tasksList = `Navbar
+Home Page
+Contact Page
+Cybersecurity 
+DataBase Design`.split("\n").sort()
+console.log('tasksList = ');
+console.log(tasksList);
 // Your code here
 
 // TODO 5:  dropping line in the field "Knowledge" (HTML, CSS, JS) 
@@ -309,7 +329,10 @@ console.log('h = ');
 console.log(h);
 console.log('showH = ');
 console.log(showH);
-// Your code here
+h.addEventListener("input", (ev)=>{
+    // Your code here
+})
+
 
 
 // Bonus Game:  The IEEE logo moves in the diagonal!
